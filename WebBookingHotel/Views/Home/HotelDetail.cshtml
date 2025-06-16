@@ -1,0 +1,205 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Lion 11 Hotel
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet" />
+    <link href="~/HotelDetail.css" rel="stylesheet" asp-append-version="true"/>
+</head>
+<script src="~/HotelDetail.js"></script>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-logo">
+            <img src="~/assets/img/Logo/logo.png"
+                 alt="CSJ Hotel Logo"
+                 class="logo-image"
+                 height="40" />
+        </div>
+        <nav class="header-nav">
+            <div class="header-currency-flag">
+                <span>VND</span>
+                <img alt="Vietnam flag icon"
+                     class="flag-icon"
+                     height="20"
+                     src="https://tse2.mm.bing.net/th?id=OIP.Z-1UkmI3IXf8CVGj8XEVawHaE8&pid=Api&P=0&h=180"
+                     width="20" />
+            </div>
+            <button aria-label="Help" class="help-btn">?</button>
+            <a class="header-link" href="#">Đăng chỗ nghỉ của Quý vị</a>
+            <a class="header-btn" href="#">Đăng ký</a>
+            <a class="header-btn" href="#">Đăng nhập</a>
+        </nav>
+    </header>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <a href="../../../../index.html">Trang chủ</a><span>›</span>
+        <a href="../../hotel_source/index.html">Khách sạn</a><span>›</span>
+        <a href="../../../famous_place/CanTho/index.html">Cần Thơ</a><span>›</span>
+        <span>Ưu đãi cho LION 11 HOTEL (Khách sạn), Cần Thơ (Việt Nam)</span>
+    </nav>
+    <!-- Tabs -->
+    <div class="tabs">
+        <ul>
+            <li>Tổng quan</li>
+            <li>Thông tin &amp; giá</li>
+            <li class="active">Tiện nghi</li>
+            <li>Quy tắc chung</li>
+        </ul>
+    </div>
+    <!-- Main content area -->
+    <main class="main-container">
+        <div class="content-flex">
+            <!-- Search box -->
+            <section class="search-box">
+                <h2>Tìm</h2>
+                <form aria-label="Search form" class="search-form">
+                    <label>
+                        <span>Tên chỗ nghỉ / điểm đến:</span>
+                        <input aria-label="Tên chỗ nghỉ / điểm đến"
+                               placeholder="Cần Thơ"
+                               type="text"
+                               value="Cần Thơ" />
+                    </label>
+                    <label>
+                        <span>Ngày nhận phòng</span>
+                        <input aria-label="Ngày nhận phòng" type="date" />
+                    </label>
+                    <label>
+                        <span>Ngày trả phòng</span>
+                        <input aria-label="Ngày trả phòng" type="date" />
+                    </label>
+                    <label class="sr-only" for="guests">Số khách</label>
+                    <select id="guests" aria-label="Số khách">
+                        <option>2 người lớn - 0 trẻ em - 1 phòng</option>
+                        <option>1 người lớn - 0 trẻ em - 1 phòng</option>
+                        <option>4 người lớn - 2 trẻ em - 2 phòng</option>
+                    </select>
+                    <label class="checkbox-label">
+                        <input type="checkbox" />
+                        <span>Tôi đi công tác</span>
+                    </label>
+                    <button type="submit" class="btn-search">Tìm</button>
+                </form>
+            </section>
+            <!-- Right content -->
+            <section class="right-content">
+                <!-- Hotel title and address -->
+                <div class="hotel-header">
+                    <div>
+                        <h1>LION 11 HOTEL</h1>
+                        <p class="address"><i class="fas fa-map-marker-alt"></i> 33 Đường Châu Văn Liêm, 94000 Cần Thơ</p>
+                        <a href="#" class="map-link">Vị trí tuyệt vời - Hiển thị bản đồ</a>
+                    </div>
+                    <button aria-label="Add to favorites" class="fav-btn">
+                        <i class="fav-btn-no--heart far fa-heart"></i>
+                        <i class="fav-btn-has--heart fas fa-heart"></i>
+                    </button>
+                </div>
+                <!-- Images grid -->
+                <div class="images-grid">
+                    <img alt="Large hotel room with floor-to-ceiling windows covered by dark curtains, a gray armchair, and a bed with white and gray bedding" height="400"
+                         src="https://cf.bstatic.com/xdata/images/hotel/max500/624301014.jpg?k=79fdfdeab1a0eae43f4f53827704359919ee99bfea6b29b4175da822fc268e9f&o=" width="600" />
+                    <!--  -->
+                    <img alt="Hotel room with two beds, blue and white bedding, and large window with curtains" height="190"
+                         src="https://cf.bstatic.com/xdata/images/hotel/max500/624302860.jpg?k=688977ad2096ea99d6273c6cac9a7ea9e9088821eaf740e08f1794d32161c8f5&o=" width="300" />
+                    <!--  -->
+                    <img alt="Hotel bathroom with sink, mirror, and wardrobe" height="190"
+                         src="https://cf.bstatic.com/xdata/images/hotel/max500/624301604.jpg?k=be3ab14a0d753867c69ddac343d58c35ab457440181084261ac04cfdcb912e30&o=" width="300" />
+                    <!--  -->
+                    <img alt="Large hotel room with floor-to-ceiling windows covered by dark curtains, a gray armchair, and a bed with white and gray bedding" height="400"
+                         src="https://cf.bstatic.com/xdata/images/hotel/max500/624303202.jpg?k=749f519e7f6f2c31b6d636d03638e6179df92fb57b2c43bc4e2f3260544716d3&o=" width="600" />
+                    <!--  -->
+                    <img alt="Hotel room with two beds, blue and white bedding, and large window with curtains" height="190"
+                         src="https://cf.bstatic.com/xdata/images/hotel/max500/624304971.jpg?k=91697afe4ffff1811acb1a4d645f591d0a01500992a134ce6dc09aa10c772b3c&o=" width="300" />
+                    <!--  -->
+                    <img alt="Hotel bathroom with sink, mirror, and wardrobe" height="190"
+                         src="https://cf.bstatic.com/xdata/images/hotel/max500/624303354.jpg?k=2ececb9eea612891be3f4a42bf441dc64f8655e4e68b4db79fe21c02731dcc98&o=" width="300" />
+                </div>
+            </section>
+        </div>
+        <hr />
+        <!-- Description and highlights -->
+        <div class="desc-highlights">
+            <article class="description">
+                <p>Nằm cách Vincom Plaza Hùng Vương 2.1 km và Can Tho Stadium 3.1 km, LION 11 Can Tho Hotel cung cấp các phòng ở Cần Thơ. Khách sạn 3 sao này cung cấp quầy lễ tân 24 giờ và Wi-Fi miễn phí. Đây là chỗ nghỉ không gây dị ứng và tọa lạc cách Bến Ninh Kiều 5 phút đi bộ.</p>
+                <p>Lễ tân tại khách sạn có thể tư vấn cho khách về khu vực xung quanh.</p>
+                <p>
+                    Các căn được trang bị tủ lạnh, minibar, ấm đun nước, vòi sen, máy sấy tóc và bàn làm việc. Với phòng tắm riêng được trang bị vòi xịt/chậu rửa vệ sinh và đồ vệ sinh cá nhân miễn phí,
+                    các phòng tại khách sạn có TV màn hình phẳng và điều hòa, trong đó một số phòng có ban công. Tại LION 11 Can Tho Hotel, mỗi phòng đều có ga trải giường và khăn tắm.
+                </p>
+                <p>Các cặp đôi đặc biệt thích địa điểm này — họ cho điểm <span>9.2</span> khi đánh giá chuyến đi hai người.</p>
+                <p class="disclaimer">Các khoảng cách nêu trong mô tả nghỉ được tính toán bằng © OpenStreetMap</p>
+            </article>
+            <aside class="highlights-box">
+                <h3>Điểm nổi bật của chỗ nghỉ</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Địa điểm hàng đầu: Được khách gần đây đánh giá cao (9.2 điểm)</li>
+                    <li><i class="fas fa-car"></i> Có bãi đậu xe riêng miễn phí ở khách sạn này</li>
+                </ul>
+                <a href="./thanhtoan/index.html" class="book-now-btn">Đặt ngay</a>
+                <button class="save-btn"><i class="fas fa-bookmark"></i> Lưu chỗ nghỉ</button>
+            </aside>
+        </div>
+    </main>
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-lists">
+            <div class="footer-group-support">
+                <h3 class="footer-group-title">Hỗ Trợ</h3>
+                <ul class="footer-group-list">
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Câu hỏi thường gặp</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Liên hệ chúng tôi</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Hướng dẫn đặt phòng</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Chính sách hoàn tiền</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Trung tâm bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="footer-group-discover">
+                <h3 class="footer-group-title">Khám phá</h3>
+                <ul class="footer-group-list">
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Chương trình Genius</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Ưu đãi theo mùa</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Bài viết du lịch</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Dành cho doanh nghiệp</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Đại lý du lịch</a></li>
+                </ul>
+            </div>
+            <div class="footer-group-partner">
+                <h3 class="footer-group-title">Quan hệ đối tác</h3>
+                <ul class="footer-group-list">
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Đăng ký đối tác</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Trở thành đại lý</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Chương trình liên kết</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Quản lý tài khoản</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Hỗ trợ đối tác</a></li>
+                </ul>
+            </div>
+            <div class="footer-group-legalAndsetting">
+                <h3 class="footer-group-title">Điều khoản và cài đặt</h3>
+                <ul class="footer-group-list">
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Điều khoản sử dụng</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Chính sách bảo mật</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Chính sách cookie</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Quyền riêng tư</a></li>
+                    <li class="footer-group-item"><a href="#" class="footer-group-link">Cài đặt ngôn ngữ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-control">
+            <p>Bản quyền © 2025 Yuhi Travel.com. Mọi quyền được bảo lưu.</p>
+            <p>
+                <a href="#">Điều khoản</a> |
+                <a href="#">Chính sách bảo mật</a> |
+                <a href="#">Liên hệ</a>
+            </p>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,49 +1,192 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebBookingHotel</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebBookingHotel.styles.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuhi travel</title>
+    <link rel="stylesheet" href="~/assets/css/assets/style.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/assets/css/assets/base.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/assets/main.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/assets/base.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/assets/font/fontawesome-free-6.7.2-web/css/all.min.css" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" asp-append-version="true">
+
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            /* khoảng cách giữa các card */
+            justify-content: space-between;
+        }
+
+            .card-container > div {
+                flex: 1 1 calc(25.00% - 20px);
+                max-width: calc(33.33% - 20px);
+                background: #f2f2f2;
+                padding: 10px;
+                box-sizing: border-box;
+                border-radius: 8px;
+                text-align: center;
+            }
+    </style>
+
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebBookingHotel</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+    <div id="main">
+        <div class="header">
+            <div class="header__navbar">
+                <div class="header__logo">
+                    <a href="#" class="header__logo-link">
+                        <img src="~/assets/img/Logo/logo.png" alt="LOGO" class="header__logo-img">
+                    </a>
+                </div>
+                <div class="header__nation">
+                    <a href="#" class="header__flag-link">
+                        <a class="header__language">VIETNAMESE</a>
+                        <img src="~/assets/img/Flag.webp" alt="LOGO" class="header__flag-img">
+                        <i class="header__navbar-icon fa-regular fa-circle-question"></i>
+                    </a>
+                </div>
+                <ul class="header__navbar-list">
+                    <li><a class="header__navbar-item">CHỖ NGHỈ ĐÃ ĐẶT</a></li>
+                    <li>
+                        <a href="~/componemts/Login_Register/Auth/register/register.php"
+                           class="header__navbar-item ">ĐĂNG KÍ</a>
+                    </li>
+                    <li>
+                        <a href="~/componemts/Login_Register/Auth/login/login.php" class="header__navbar-item ">
+                            ĐĂNG
+                            NHẬP
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        @RenderBody()
+
+        <div class="footer">
+            <div class="footer-lists">
+                <div class="footer-group-support">
+                    <h3 class="footer-group-title">Hỗ Trợ</h3>
+                    <ul class="footer-group-list">
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Câu hỏi thường gặp</a></li>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Liên hệ chúng tôi</a></li>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Hướng dẫn đặt phòng</a></li>
+                        <li class="footer-group-item">
+                            <a href="#" class="footer-group-link">Chính sách hoàn tiền</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Trung tâm bảo mật</a></li>
+                    </ul>
+                </div>
+                <div class="footer-group-discover">
+                    <h3 class="footer-group-title">Khám phá</h3>
+                    <ul class="footer-group-list">
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Chương trình Genius</a></li>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Ưu đãi theo mùa</a></li>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Bài viết du lịch</a></li>
+                        <li class="footer-group-item">
+                            <a href="#" class="footer-group-link">Dành cho doanh nghiệp</a>
                         </li>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Đại lý du lịch</a></li>
+                    </ul>
+                </div>
+                <div class="footer-group-partner">
+                    <h3 class="footer-group-title">Quan hệ đối tác</h3>
+                    <ul class="footer-group-list">
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Đăng ký đối tác</a></li>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Trở thành đại lý</a></li>
+                        <li class="footer-group-item">
+                            <a href="#" class="footer-group-link">Chương trình liên kết</a>
+                        </li>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Quản lý tài khoản</a></li>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Hỗ trợ đối tác</a></li>
+                    </ul>
+                </div>
+                <div class="footer-group-legalAndsetting">
+                    <h3 class="footer-group-title">Điều khoản và cài đặt</h3>
+                    <ul class="footer-group-list">
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Điều khoản sử dụng</a></li>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Chính sách bảo mật</a></li>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Chính sách cookie</a></li>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Quyền riêng tư</a></li>
+                        <li class="footer-group-item"><a href="#" class="footer-group-link">Cài đặt ngôn ngữ</a></li>
                     </ul>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+            <div class="footer-control">
+                <p>Bản quyền © 2025 Yuhi travel.com. Mọi quyền được bảo lưu.</p>
+                <p>
+                    <a href="#">Điều khoản</a> |
+                    <a href="#">Chính sách bảo mật</a> |
+                    <a href="#">Liên hệ</a>
+                </p>
+
+            </div>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - WebBookingHotel - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <Script src="~/assets/css/js/sliderLoad.js"></Script>
+    <script></script>
+    <!-- like button -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const likeButtons = document.querySelectorAll('.home-guest-item__like');
+
+            likeButtons.forEach((button, index) => {
+                const icon = button.querySelector('.home-guest-item__like-icon-no');
+                const isLiked = localStorage.getItem(`liked-${index}`) === 'true';
+
+                if (isLiked) {
+                    icon.classList.remove('fa-regular');
+                    icon.classList.add('fa-solid');
+                }
+
+                button.addEventListener('click', function () {
+                    if (icon.classList.contains('fa-regular')) {
+                        icon.classList.remove('fa-regular');
+                        icon.classList.add('fa-solid');
+                        localStorage.setItem(`liked-${index}`, 'true');
+                    } else {
+                        icon.classList.remove('fa-solid');
+                        icon.classList.add('fa-regular');
+                        localStorage.setItem(`liked-${index}`, 'false');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.querySelector('.search-bar__button').addEventListener('click', function () {
+            var selectedCity = document.getElementById('cityFilter').value;
+
+            // Danh sách tất cả các loại card cần xử lý
+            var cardTypes = ['hotel-card', 'apartment-card', 'villas-card', 'resort-card'];
+
+            // Lặp qua từng loại card
+            cardTypes.forEach(function (type) {
+                // Ẩn tất cả các card thuộc loại đó
+                document.querySelectorAll('.' + type).forEach(function (card) {
+                    card.style.display = 'none';
+                });
+
+                // Hiển thị các card có class thành phố tương ứng
+                document.querySelectorAll('.' + type + '.' + selectedCity).forEach(function (card) {
+                    card.style.display = 'block';
+                });
+            });
+        });
+
+
+    </script>
+
+
+
 </body>
+
 </html>

@@ -1,0 +1,22 @@
+﻿@model List<Room>
+<div class="option-container">
+    <div class="option-names" role="radiogroup" aria-label="Tùy chọn phòng">
+        @foreach (var item in Model)
+        {
+            <input type="radio" name="roomOption" id="option1" value="option1" checked />
+            <label for="option1">@item.RoomType</label>
+        }
+    </div>
+
+    <div class="option-prices" aria-label="Giá tiền các tùy chọn">
+        @foreach (var item in Model)
+        {
+            <div class="price-item" data-option="option1" tabindex="0" aria-label="@item.RoomType">
+                <span class="price-number"></span>
+                <span class="price-unit">
+                    @($"{item.Price:N0} VNĐ")
+                </span>
+            </div>
+        }
+    </div>
+</div>

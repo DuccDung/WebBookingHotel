@@ -1,0 +1,26 @@
+﻿@model List<Hotel>
+@foreach(var item in Model)
+{
+    <div class="hotel-card">
+        <a href="" class="hotel-link">
+            <div class="hotel-image">
+                <img src="@Url.Content("~/img/" + item.Img)"
+                     alt="Khách sạn" class="hotel-image__img">
+                <div class="hotel-rating">@item.Rating</div>
+            </div>
+
+        </a>
+        <div class="hotel-info">
+            <h3 class="hotel-name">@item.Name</h3>
+            <p class="hotel-address">@item.Address</p>
+            <span class="hotel-descrip">
+               @item.Description
+            </span>
+            <div class="hotel-price">VND @string.Format("{0:N0}", item.PriceFrom)</div>
+            <div class="hotel-per-night">Cho đêm nay</div>
+        </div>
+        <div class="hotel-book-btn">
+            <a asp-controller="Home" asp-action="Booking" asp-route-hotelId="@item.HotelId"><button class="hotel-btn">Đặt ngay</button></a>
+        </div>
+    </div>
+}

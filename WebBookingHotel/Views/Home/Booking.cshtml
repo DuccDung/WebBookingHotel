@@ -1,0 +1,208 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>ThanhToan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- New -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="~/Booking.css" rel="stylesheet" asp-append-version="true" />
+</head>
+@model int
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-logo">
+            <img src="~/assets/img/Logo/logo.png"
+                 alt="CSJ Hotel Logo"
+                 class="logo-image"
+                 height="40" />
+        </div>
+        <nav class="header-nav">
+            <div class="header-currency-flag">
+                <span>VND</span>
+                <img alt="Vietnam flag icon"
+                     class="flag-icon"
+                     height="20"
+                     src="https://tse2.mm.bing.net/th?id=OIP.Z-1UkmI3IXf8CVGj8XEVawHaE8&pid=Api&P=0&h=180"
+                     width="20" />
+            </div>
+            <button aria-label="Help" class="help-btn">?</button>
+            <a class="header-link" href="#">Đăng chỗ nghỉ của Quý vị</a>
+            <a class="header-btn" href="#">Đăng ký</a>
+            <a class="header-btn" href="#">Đăng nhập</a>
+        </nav>
+    </header>
+    <div>
+        <h1 class="header-title">Chọn phòng khách sạn</h1>
+    </div>
+
+    <p class="subtitle">Vui lòng chọn tùy chọn và phương thức thanh toán</p>
+    <form>
+
+        <div id="booking-form" autocomplete="off" novalidate>
+            @await Component.InvokeAsync("TypeRoom", new { hotelId = Model })
+        </div>
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-semibold text-lg mb-4">Nhập thông tin chi tiết của bạn</h2>
+            <div class="border border-gray-300 rounded-md p-4 mb-6 text-gray-800 text-sm leading-relaxed flex items-start gap-3"
+                 role="alert">
+                <i class="fas fa-info-circle mt-[3px] text-gray-600"></i>
+                <div>
+                    <p>
+                        Gần xong rồi! Chỉ cần điền phần thông tin
+                        <span class="text-red-600 font-semibold">*</span> bắt buộc
+                    </p>
+                    <p>Vui lòng nhập thông tin của bạn bằng ký tự Latin để chỗ nghỉ có thể hiểu được</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="flex flex-col sm:flex-row sm:space-x-6 gap-4">
+                    <div class="flex-1">
+                        <label for="lastname" class="block text-sm font-semibold mb-1">
+                            Họ (tiếng Việt)
+                            <span class="text-red-600">*</span>
+                        </label>
+                        <input id="lastname"
+                               type="text"
+                               placeholder="ví dụ: Nguyễn"
+                               class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600" />
+                    </div>
+                    <div class="flex-1">
+                        <label for="firstname" class="block text-sm font-semibold mb-1">
+                            Tên (tiếng Việt)
+                            <span class="text-red-600">*</span>
+                        </label>
+                        <input id="firstname"
+                               type="text"
+                               placeholder="ví dụ: Tuấn"
+                               class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600" />
+                    </div>
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-semibold mb-1">
+                        Địa chỉ email
+                        <span class="text-red-600">*</span>
+                    </label>
+                    <input id="email"
+                           type="email"
+                           class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600" />
+                    <p class="text-xs text-gray-500 mt-1">
+                        Email xác nhận đặt phòng sẽ được gửi đến địa chỉ này
+                    </p>
+                </div>
+
+                <div>
+                    <label for="region" class="block text-sm font-semibold mb-1">
+                        Vùng/quốc gia
+                        <span class="text-red-600">*</span>
+                    </label>
+                    <select id="region"
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        <option>Việt Nam</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col sm:flex-row sm:space-x-6 gap-4">
+                    <div class="w-36">
+                        <label for="phonecode" class="block text-sm font-semibold mb-1">
+                            Số điện thoại
+                            <span class="text-red-600">*</span>
+                        </label>
+                        <select id="phonecode"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            <option>VN +84</option>
+                        </select>
+                    </div>
+                    <div class="flex-1">
+                        <label for="phone" class="block text-sm font-semibold mb-1 invisible">Số điện thoại</label>
+                        <input id="phone"
+                               type="text"
+                               class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600" />
+                    </div>
+                </div>
+                <div class="total-container" id="totalPrice" aria-live="polite" aria-atomic="true">
+                    <span class="total-label">Tổng giá tiền:</span>
+                    <span class="total-price-number">2,300,000</span>
+                    <span class="total-price-unit">VND</span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        (function() {
+          // Prices in VND
+          const prices = {
+            option1: 530000,
+            option2: 453700,
+            option3: 660000
+          };
+
+          const roomOptions = document.getElementsByName('roomOption');
+          const paymentMethods = document.getElementsByName('paymentMethod'); // Currently not affecting price
+          const totalPriceNumber = document.querySelector('.total-price-number');
+          const priceItems = document.querySelectorAll('.price-item');
+
+          function formatVND(number) {
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+          }
+
+          function updatePriceHighlight(selectedOption) {
+            priceItems.forEach(item => {
+              if (item.dataset.option === selectedOption) {
+                item.classList.add('active');
+              } else {
+                item.classList.remove('active');
+              }
+            });
+          }
+
+          function updateTotal() {
+            let selectedOption = Array.from(roomOptions).find(opt => opt.checked)?.value;
+            if (!selectedOption) selectedOption = 'option1';
+
+            let basePrice = prices[selectedOption] || 0;
+            totalPriceNumber.textContent = formatVND(basePrice);
+            updatePriceHighlight(selectedOption);
+          }
+
+          Array.from(roomOptions).forEach(option => {
+            option.addEventListener('change', updateTotal);
+          });
+
+          Array.from(paymentMethods).forEach(pm => {
+            pm.addEventListener('change', updateTotal);
+          });
+
+          updateTotal();
+
+          // Thêm sự kiện click vào tổng giá tiền
+          document.getElementById('totalPrice').addEventListener('click', function() {
+            // Lấy giá trị từ các trường nhập liệu
+            const lastname = document.getElementById('lastname').value.trim();
+            const firstname = document.getElementById('firstname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            // Kiểm tra nếu bất kỳ trường nào bị bỏ trống
+            if (!lastname || !firstname || !email || !phone) {
+              alert('Vui lòng nhập đầy đủ thông tin trước khi đặt phòng!');
+              return;
+            }
+
+            // Nếu tất cả thông tin đã được nhập, hiển thị thông báo thành công
+            alert('Đặt phòng thành công!');
+          });
+        })();
+    </script>
+</body>
+</html>

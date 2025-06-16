@@ -1,8 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using WebBookingHotel.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddDbContext<BookingHotelDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BookingHotelDbContext")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

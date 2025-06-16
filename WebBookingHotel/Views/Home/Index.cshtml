@@ -1,8 +1,1314 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
 }
+        <!-- SLIDER -->
+        <div class="slider">
+            <div class="text-content">
+                <h2 class="content-tiltle " style="font-size: 46px; font-weight: 600;">HAVE A RELAXING TRIP</h2>
+                <p class="content-subtiltle" style="margin-top: 40px; font-size: 22px;">
+                    CHOOSE FROM HOUSE, HOTEL, MORE
+                </p>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+            </div>
+            <div class="content__slider-search">
+                <div class="content__left">
+                    <div class="search-bar">
+                        <div class="search-bar__item">
+                            <i class="fa fa-bed"></i>
+                            <select class="search-bar__input" id="cityFilter">
+                                <option value="hochiminh">TP Hồ Chí Minh</option>
+                                <option value="hanoi">Hà Nội</option>
+                                <option value="cantho">Cần Thơ</option>
+                                <option value="dalat">Đà Lạt</option>
+                                <option value="vungtau">Vũng Tàu</option>
+                                <option value="nhatrang">Nha Trang</option>
+                            </select>
+                        </div>
+                        <div class="search-bar__item">
+                            <input type="text" class="search-bar__input" placeholder="Nhận phòng"
+                                   onfocus="(this.type='date')">
+                        </div>
+                        <div class="search-bar__item">
+                            <input type="text" class="search-bar__input" placeholder="Trả phòng"
+                                   onfocus="(this.type='date')">
+                        </div>
+                        <div class="search-bar__item">
+                            <select class="filter-select" id="roomFilter">
+                                <a href="#">
+                                <option>1 người lớn - 0 trẻ em - 1 phòng</option>
+                                </a>
+                                <a href="#">
+                                <option>1 người lớn - 0 trẻ em - 1 phòng</option>
+                                </a>
+                                <a href="#">
+                                <option>4 người lớn - 2 trẻ em - 2 phòng</option>
+                                </a>
+
+                            </select>
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <button class="search-bar__button">Tìm</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PROPERTY TYPE -->
+        <div class="content">
+            <div class="content-section">
+                <h2 class="section-heading">Tìm theo loại chỗ nghỉ</h2>
+                <div class="section_destination-list">
+                   @* category *@
+                    @await Component.InvokeAsync("Category")
+                </div>
+            </div>
+
+            <!-- HOME GUESTS LOVE -->
+            <div class="content-section">
+                <h2 class="section-heading">Nhà ở mà khách yêu thích</h2>
+
+                <div class="section__destination-prominent">
+                    <a class="home-guest-item" href="./componemts/home_guest-love/lion/index.html">
+                        <div class="home-guest-item__img"
+                             style="background-image: url(https://www.lionhotel.vn/files/branch/room/i_92_979_z5779139595766_a784415de3b88ce7215835bc6c24157d.jpg);">
+                        </div>
+
+                        <h4 class="home-guest-item__name">LION HOTEL</h4>
+                        <h5 class="home-guest-item__descrip">
+                            LION HOTEL tọa lạc ở Cần Thơ, cách Trung tâm thương mại
+                            Vincom Xuân Khánh 2.5 km và Bảo tàng Cần Thơ 15 phút đi bộ.
+                            Khách sạn nằm cách Vinh Long Museum khoảng 43 km và Cầu đi bộ Ninh Kiều 2 km.
+                        </h5>
+
+
+
+                        <div class="home-guest-item__rating">
+                            <span class="home-guest-item__rank">8.1</span>
+
+                            <span class="home-guest-item__feedback ">Rất tốt</span>
+                            <span class="home-guest-item__reviews">/ 512 đánh giá</span>
+                        </div>
+
+                        <div class="home-guest-item__prices">
+                            <span class="home-guest-begin__price">Giá chỉ từ</span>
+                            <span class="home-guest-item__price">304.430 VNĐ</span>
+
+                        </div>
+
+                        <div class="home-guest-item__action">
+                            <span class="home-guest-item__like  home-guest-item__liked">
+                                <i class="home-guest-item__like-icon-no fa-regular fa-heart"></i>
+                                <!-- <i class="home-guest-item__like-icon-has fa-solid fa-heart"></i> -->
+                            </span>
+
+                        </div>
+
+                    </a>
+                    <!--  -->
+                    <a class="home-guest-item" href="./componemts/home_guest-love/CSJ/index.html">
+                        <div class="home-guest-item__img"
+                             style="background-image: url(https://cf.bstatic.com/xdata/images/hotel/max1280x900/651847155.jpg?k=b5036b4e322345b8f6cf6e4270c9aa56777167d6833fddc61b4873292b904306&o=&hp=1);">
+                        </div>
+
+                        <h4 class="home-guest-item__name">CSJ TOWER </h4>
+                        <h5 class="home-guest-item__descrip">
+                            CSJ TOWER - Luxury Near Beach Apartments - Căn Hộ Du Lịch
+                            Cạnh Biển Thành Phố Biển Vũng Tàu cách Bãi Sau chỉ vài bước chân.
+                            Sân bay Quốc tế Tân Sơn Nhất cách 99 km, đồng thời chỗ nghỉ có cung cấp dịch vụ đưa đón sân
+                            bay mất phí
+                        </h5>
+
+
+
+                        <div class="home-guest-item__rating">
+                            <span class="home-guest-item__rank">8.9</span>
+
+                            <span class="home-guest-item__feedback ">Rất tốt</span>
+                            <span class="home-guest-item__reviews">/ 160 đánh giá</span>
+                        </div>
+
+                        <div class="home-guest-item__prices">
+                            <span class="home-guest-begin__price">Giá chỉ từ</span>
+                            <span class="home-guest-item__price">680.000 VNĐ</span>
+
+                        </div>
+
+                        <div class="home-guest-item__action">
+                            <span class="home-guest-item__like  home-guest-item__liked">
+                                <i class="home-guest-item__like-icon-no fa-regular fa-heart"></i>
+                                <!-- <i class="home-guest-item__like-icon-has fa-solid fa-heart"></i> -->
+                            </span>
+
+                        </div>
+
+                    </a>
+                    <!--  -->
+                    <a class="home-guest-item" href="./componemts/home_guest-love/soho/index.html">
+                        <div class="home-guest-item__img"
+                             style="background-image: url(https://cf.bstatic.com/xdata/images/hotel/max1024x768/663910192.jpg?k=2f1476e2600b84aea0587b7a3c731c06b0b3cb6952e70742afa6b1027cd98461&o=&hp=1);">
+                        </div>
+
+                        <h4 class="home-guest-item__name">SOHO RESIDENCE</h4>
+                        <h5 class="home-guest-item__descrip">
+                            Nằm cách Bảo tàng Mỹ thuật chưa đến 1 km,
+                            Imperial SOHO RESIDENCE Saigon cung cấp chỗ nghỉ có hồ bơi ngoài trời, khu vườn và quầy lễ
+                            tân 24 giờ.
+                        </h5>
+
+
+
+                        <div class="home-guest-item__rating">
+                            <span class="home-guest-item__rank">8.0</span>
+
+                            <span class="home-guest-item__feedback ">Tốt</span>
+                            <span class="home-guest-item__reviews">/ 75 reviews</span>
+                        </div>
+
+                        <div class="home-guest-item__prices">
+                            <span class="home-guest-begin__price">Giá chỉ từ</span>
+                            <span class="home-guest-item__price">575.710 VNĐ</span>
+
+                        </div>
+
+                        <div class="home-guest-item__action">
+                            <span class="home-guest-item__like  home-guest-item__liked">
+                                <i class="home-guest-item__like-icon-no fa-regular fa-heart"></i>
+                                <!-- <i class="home-guest-item__like-icon-has fa-solid fa-heart"></i> -->
+                            </span>
+
+                        </div>
+
+                    </a>
+                    <!--  -->
+                    <a class="home-guest-item" href="./componemts/home_guest-love/ocean/index.html">
+                        <div class="home-guest-item__img"
+                             style="background-image: url(https://cf.bstatic.com/xdata/images/hotel/max1024x768/549248412.jpg?k=9b64099c29d2a13ffe3eeba019f9a9020708c62328d6094f43dd872d0a36e006&o=&hp=1);">
+                        </div>
+
+                        <h4 class="home-guest-item__name">OCEANFRONT SUITES</h4>
+                        <h5 class="home-guest-item__descrip">
+                            Các điểm tham quan nổi tiếng gần OCEANFRONT SUITES NHA
+                            TRANG bao gồm Bãi biển Nha Trang,
+                            Tháp Trầm Hương và Trung tâm thương mại Nha Trang Center.
+                            Chỗ nghỉ cách Sân bay quốc tế Cam Ranh 35 km và cung cấp dịch vụ đưa đón sân bay mất phí..
+                        </h5>
+
+
+
+                        <div class="home-guest-item__rating">
+                            <span class="home-guest-item__rank">8.6</span>
+
+                            <span class="home-guest-item__feedback ">Tuyệt vời</span>
+                            <span class="home-guest-item__reviews">/ 260 đánh giá</span>
+                        </div>
+
+                        <div class="home-guest-item__prices">
+                            <span class="home-guest-begin__price">Giá chỉ từ</span>
+                            <span class="home-guest-item__price">780.000 VNĐ</span>
+
+                        </div>
+
+                        <div class="home-guest-item__action">
+                            <span class="home-guest-item__like  home-guest-item__liked">
+                                <i class="home-guest-item__like-icon-no fa-regular fa-heart"></i>
+                                <!-- <i class="home-guest-item__like-icon-has fa-solid fa-heart"></i> -->
+                            </span>
+
+                        </div>
+
+                    </a>
+                </div>
+                <!--  -->
+            </div>
+
+            <!-- PLACE -->
+            <div class="content-section">
+                <h2 class="section-heading">Địa danh nổi tiếng</h2>
+                <div class="place__famous">
+                    <div class="place-item">
+
+                        <a href="../src/componemts/famous_place/VungTau/index.html" class="place__famous-item ">
+                            <img src="./assets/img/place/vung_tau.jpg" alt="VŨNG TÀU" class="place__famous-img">
+                            <p class="place__famous-name">VŨNG TÀU</p>
+                        </a>
+                        <a href="../src/componemts/famous_place/DaLat/index.html" class="place__famous-item ">
+                            <img src="./assets/img/place/da_lat.jpg" alt="ĐÀ LẠT" class="place__famous-img">
+                            <p class="place__famous-name">ĐÀ LẠT</p>
+                        </a>
+
+
+
+                        <a href="../src/componemts/famous_place/NhaTrang/index.html" class="place__famous-item ">
+                            <img src="./assets/img/place/nha_trang.jpg" alt="NHA TRANG" class="place__famous-img">
+                            <p class="place__famous-name">NHA TRANG</p>
+                        </a>
+                        <a href="../src/componemts/famous_place/CanTho/index.html" class="place__famous-item ">
+                            <img src="./assets/img/place/can_tho.jpg" alt="VŨNG TÀU" class="place__famous-img">
+                            <p class="place__famous-name">CẦN THƠ</p>
+                        </a>
+                        <a href="../src/componemts/famous_place/HCM/index.html" class="place__famous-item ">
+                            <img src="./assets/img/place/ho-chi-minh-city.jpg" alt="HỒ CHÍ MINH"
+                                 class="place__famous-img">
+                            <p class="place__famous-name">HỒ CHÍ MINH</p>
+                        </a>
+                        <a href="../src/componemts/famous_place/HaNoi/index.html" class="place__famous-item ">
+                            <img src="./assets/img/place/ha-noi.jpg" alt="HÀ NỘI" class="place__famous-img">
+                            <p class="place__famous-name">HÀ NỘI</p>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Danh sách sản phẩm để tìm kiếm -->
+        <div class="card-container">
+            <!-- Hotel -->
+            <div class="hotel-grid">
+                <!-- 1 -->
+                <div class="hotel-card hochiminh" style="display: none;">
+                    <a href="./LA_VELA-HCM/index.html" class="hotel-link">
+                        <div class="hotel-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/347391971.jpg?k=dc6c4b41f989aeccebdf0ed91b7f0992db102eb60b933d02b7eb823be3d523ac&o=&hp=1"
+                                 alt="Khách sạn" class="hotel-image__img">
+                            <div class="hotel-rating">8.9</div>
+                        </div>
+
+                    </a>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">Khách sạn La Vela Sài Gòn</h3>
+                        <p class="hotel-address">Quận 3</p>
+                        <span class="hotel-descrip">
+                            Nằm ở TP. Hồ Chí Minh, cách Chợ Tân Định 8 phút đi bộ, La Vela
+                            Saigon
+                            Hotel cung cấp chỗ nghỉ có hồ bơi ngoài trời,
+                            chỗ đậu xe riêng miễn phí, trung tâm thể dục và phòng chờ chung.
+                            Khách sạn có sân hiên và nhìn ra thành phố, ngoài ra du khách có thể thưởng thức bữa ăn tại
+                            nhà
+                            hàng hoặc đồ uống tại quầy bar.
+                        </span>
+                        <div class="hotel-price">VND 3.678.400</div>
+                        <div class="hotel-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="hotel-book-btn">
+                        <a href="../src/componemts/accommodation/hotel_source/LA_VELA-HCM/thanhtoan/index.html"><button class="hotel-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="hotel-card cantho" style="display: none;">
+                    <a href="./LION11-CT/index.html" class="hotel-link">
+                        <div class="hotel-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/624301549.jpg?k=16e34ca56bf781824c58b4a82460b83372da8488c03e7df254cf00689abefaf4&o="
+                                 alt="Khách sạn" class="hotel-image__img">
+                            <div class="hotel-rating">9.2</div>
+                        </div>
+
+                    </a>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">LION 11 Can Tho Hotel</h3>
+                        <p class="hotel-address">33 Đường Châu Văn Liêm, 94000 Cần Thơ </p>
+                        <span class="hotel-descrip">
+                            Nằm cách Vincom Plaza Hùng Vương 2.1 km và Can Tho Stadium 3.1 km,
+                            LION
+                            11 Can Tho Hotel cung cấp các phòng ở Cần Thơ.
+                            Đây là chỗ nghỉ không gây dị ứng và tọa lạc cách Bến Ninh Kiều 5 phút đi bộ.
+                            Các điểm tham quan nổi tiếng gần chỗ nghỉ bao gồm Trung tâm thương mại Vincom Xuân Khánh,
+                            Bảo
+                            tàng Cần Thơ và Cầu đi bộ Ninh Kiều. Sân bay Quốc tế Cần Thơ cách 10 km.
+                        </span>
+                        <div class="hotel-price">VND 453.700</div>
+                        <div class="hotel-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="hotel-book-btn">
+                        <a href="../src/componemts/accommodation/hotel_source/LION11-CT/thanhtoan/index.html"><button class="hotel-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="hotel-card vungtau" style="display: none;">
+                    <a href="./ROSE_THESONG-VT/thanhtoan/index.html" class="hotel-link">
+                        <div class="hotel-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max500/620723137.jpg?k=8ec210db2557ec7540e385bd543f01ce336ae3deeb2f2a0e77cca5646fc19943&o="
+                                 alt="Khách sạn" class="hotel-image__img">
+                            <div class="hotel-rating">9.4</div>
+                        </div>
+
+                    </a>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">The Song Apartment-Rose Vũng Tàu</h3>
+                        <p class="hotel-address">28 Đường Thi Sách, Phường Thắng Tam, Vũng Tàu</p>
+                        <span class="hotel-descrip">
+                            Nằm ở Vũng Tàu, The Song Apartment - Căn Hộ The Sóng -Rose Vũng
+                            Tàu
+                            cung cấp chỗ nghỉ có hồ bơi ngoài trời mở quanh năm, Wi-Fi miễn phí, khu vườn và sân hiên.
+                            Chỗ đậu xe riêng có sẵn trong khuôn viên.
+                            The Song Apartment - Căn Hộ The Sóng -Rose Vũng Tàu cách Bãi Sau chưa đến 1 km và Khu du
+                            lịch
+                            sinh thái văn hóa Hồ Mây 3.8 km.
+                        </span>
+                        <div class="hotel-price">VND 479.250</div>
+                        <div class="hotel-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="hotel-book-btn">
+                        <a href="../src/componemts/accommodation/hotel_source/ROSE_THESONG-VT/thanhtoan/index.html"><button class="hotel-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="hotel-card hochiminh" style="display: none;">
+                    <a href="./LANDMARK81-HCM/index.html" class="hotel-link">
+                        <div class="hotel-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/668138309.jpg?k=4fcc83bd1837e80b0d143d4a04524b237e9cbf1ed90f41eb04840b99bb30a061&o=&hp=1"
+                                 alt="Khách sạn" class="hotel-image__img">
+                            <div class="hotel-rating">9.4</div>
+                        </div>
+
+                    </a>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">Landmark 81 Legacy Garden</h3>
+                        <p class="hotel-address">Quận Bình Thạnh, TP. Hồ Chí Minh, Việt Nam</p>
+                        <span class="hotel-descrip">
+                            Nằm ở TP. Hồ Chí Minh, cách Chợ Tân Định 8 phút đi bộ, La Vela
+                            Saigon
+                            Hotel cung cấp chỗ nghỉ có hồ bơi ngoài trời,
+                            chỗ đậu xe riêng miễn phí, trung tâm thể dục và phòng chờ chung.
+                            Khách sạn có sân hiên và nhìn ra thành phố, ngoài ra du khách có thể thưởng thức bữa ăn tại
+                            nhà
+                            hàng hoặc đồ uống tại quầy bar.
+                        </span>
+                        <div class="hotel-price">VND 1.375.000</div>
+                        <div class="hotel-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="hotel-book-btn">
+                        <a href="../src/componemts/accommodation/hotel_source/LA_VELA-HCM/thanhtoan/index.html"><button class="hotel-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="hotel-card cantho" style="display: none;">
+                    <a href="./SHERATON-CT/index.html" class="hotel-link">
+                        <div class="hotel-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/643209570.jpg?k=f2dee39ecf6f106853158e1a2a12bfa5871eb50fea2e5a70d135620d8dc643d2&o=&hp=1"
+                                 alt="Khách sạn" class="hotel-image__img">
+                            <div class="hotel-rating">9.2</div>
+                        </div>
+
+                    </a>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">Sheraton Can Tho</h3>
+                        <p class="hotel-address">30/4, Xuan Khanh , Ninh Kieu , Cần Thơ</p>
+                        <span class="hotel-descrip">
+                            Nằm cách Bến Ninh Kiều chỉ 2,4 km, tòa nhà trắng Sheraton Can Tho
+                            Hotel
+                            có hồ bơi ngoài trời đầy mời gọi.
+                            Khách sạn cũng cung cấp dịch vụ cho thuê xe hơi. Sheraton Can Tho Hotel nằm cách Chợ nổi Cái
+                            Răng 3,8 km và Bảo tàng Cần Thơ 2,3 km. Sân bay Rạch Giá nằm trong bán kính 70 km từ chỗ
+                            nghỉ.
+                        </span>
+                        <div class="hotel-price">VND 1.800.000</div>
+                        <div class="hotel-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="hotel-book-btn">
+                        <a href="../src/componemts/accommodation/hotel_source/SHERATON-CT/thanhtoan/index.html"><button class="hotel-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="hotel-card nhatrang" style="display: none;">
+                    <a href="./PANORAMA_NT/index.html" class="hotel-link">
+                        <div class="hotel-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/654443883.jpg?k=fb457c896b596518f362dfdf6421f7e587085c82eeedb4e59134e9b83417ca3c&o=&hp=1"
+                                 alt="Khách sạn" class="hotel-image__img">
+                            <div class="hotel-rating">9.7</div>
+                        </div>
+
+                    </a>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">Panorama Nha Trang SanVilla</h3>
+                        <p class="hotel-address">1b Nguyễn Thị Minh Khai 20, 650000 Nha Trang</p>
+                        <span class="hotel-descrip">
+                            Các điểm tham quan nổi tiếng gần Panorama Nha Trang SanVilla bao gồm
+                            Bãi
+                            biển Nha Trang, Tháp Trầm Hương và Trung tâm thương mại Nha Trang Center. Sân bay quốc tế
+                            Cam
+                            Ranh cách 35 km.
+                            Nằm ở Nha Trang, Panorama Nha Trang SanVilla cung cấp Wi-Fi miễn phí, nơi khách có thể trải
+                            nghiệm khu vực bãi biển riêng, sân hiên và quầy bar.
+
+                        </span>
+                        <div class="hotel-price">VND 745.000</div>
+                        <div class="hotel-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="hotel-book-btn">
+                        <a href="../src/componemts/accommodation/hotel_source/PANORAMA_NT/thanhtoan/index.html"><button class="hotel-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="hotel-card hanoi" style="display: none;">
+                    <a href="./LE_PETIT-HN/index.html" class="hotel-link">
+                        <div class="hotel-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max500/659832445.jpg?k=e3683024b62fa6fc8258404cefd8f71181cab0587a350c0a74abf879eb71476c&o="
+                                 alt="Khách sạn" class="hotel-image__img">
+                            <div class="hotel-rating">9.5</div>
+                        </div>
+
+                    </a>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">Le Petit Prince Hotel & Rooftop Bar</h3>
+                        <p class="hotel-address">58 Phố Hàng Gai, Quận Hoàn Kiếm, 100000 Hà Nội</p>
+                        <span class="hotel-descrip">
+                            Le Petit Prince Hotel & Rooftop Bar có phòng chờ chung, sân hiên,
+                            nhà
+                            hàng và quầy bar ở Hà Nội. Chỗ nghỉ nằm gần một số điểm tham quan nổi tiếng,
+                            cách Ô Quan Chưởng khoảng chưa đến 1 km, Ga Hà Nội khoảng 16 phút đi bộ, Nhà thờ Thánh
+                            Joseph
+                            khoảng 400 m.
+                        </span>
+                        <div class="hotel-price">VND 1.907.500</div>
+                        <div class="hotel-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="hotel-book-btn">
+                        <a href="../src/componemts/accommodation/hotel_source/LE_PETIT-HN/thanhtoan/index.html"><button class="hotel-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="hotel-card dalat" style="display: none;">
+                    <a href="./LA_HOUSE-ĐL/index.html" class="hotel-link">
+                        <div class="hotel-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/522869651.jpg?k=c62561adc2b7ae6da2cc478523c2eec8219e98e44423a0ae58220e9595b65655&o=&hp=1"
+                                 alt="Khách sạn" class="hotel-image__img">
+                            <div class="hotel-rating">8.9</div>
+                        </div>
+
+                    </a>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">Le House DaLat</h3>
+                        <p class="hotel-address">124 Đường Phạm Ngọc Thạch, Đà Lạt</p>
+                        <span class="hotel-descrip">
+                            Tọa lạc ở Đà Lạt, cách Quảng trường Lâm Viên 2.7 km, Le House DaLat
+                            cung
+                            cấp chỗ nghỉ có khu vườn, chỗ đậu xe riêng miễn phí, phòng chờ chung và sân hiên.
+                            Le House DaLat cách Hồ Xuân Hương 2.9 km và Công viên Yersin 3 km.
+                        </span>
+                        <div class="hotel-price">VND 1.090.000</div>
+                        <div class="hotel-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="hotel-book-btn">
+                        <a href="../src/componemts/accommodation/hotel_source/LA_HOUSE-ĐL/thanhtoan/index.html"><button class="hotel-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Reort -->
+            <div class="resort-grid">
+                <div class="resort-card dalat" style="display: none;">
+                    <a href="./KIM_RESORT-ĐL/index.html" class="resort-link">
+                        <div class="resort-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/597975100.jpg?k=cdc4fd006a303fc6e769058c0c015ae3c71b076504b17b782efe8d8005ab55cb&o=&hp=1"
+                                 alt="Căn hộ" class="resort-image__img">
+                            <div class="resort-rating">8.2</div>
+                        </div>
+
+                    </a>
+                    <div class="resort-info">
+                        <h3 class="resort-name">Kim Resort - Khu Nghĩ Dưỡng Rừng Lá Kim</h3>
+                        <p class="resort-address">144b Vòng Lâm Viên, Đà Lạt</p>
+                        <span class="resort-descrip">
+                            Tại resort, các phòng đều có bàn làm việc, TV màn hình phẳng, phòng
+                            tắm
+                            riêng, ga trải giường và khăn tắm. Tất cả các phòng đều được thiết kế có két an toàn, trong
+                            đó
+                            một số phòng có ban công. Tất cả các phòng đều có minibar.
+
+                            Kim Resort - Khu Nghĩ Dưỡng Rừng Lá Kim có phục vụ bữa sáng thực đơn buffet.
+
+                            Chỗ nghỉ có sân chơi trẻ em. Đi xe đạp là hoạt động được ưa chuộng trong khu vực. Ngoài ra,
+                            Kim
+                            Resort - Khu Nghĩ Dưỡng Rừng Lá Kim có dịch vụ thuê ô tô.
+
+                            Resort cách Sân golf Dalat Palace Golf Club 5.2 km và Hồ Xuân Hương 5.8 km.
+                        </span>
+                        <div class="resort-price">VND 1.047.099</div>
+                        <div class="resort-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="resort-book-btn">
+                        <a href="../src/componemts/accommodation/resort_source/KIM_RESORT-ĐL/thanhtoan/index.html"><button class="resort-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="resort-card hochiminh" style="display: none;">
+                    <a href="./HIDDEN_MANSIONS-HCM/index.html" class="resort-link">
+                        <div class="resort-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/569543937.jpg?k=d100b7961bcd1e8045f632c55df7b89af5d78a48265448f832bfc8cec4e93e78&o="
+                                 alt="Căn hộ" class="resort-image__img">
+                            <div class="resort-rating">9.3</div>
+                        </div>
+
+                    </a>
+                    <div class="resort-info">
+                        <h3 class="resort-name">Hidden Mansions Saigon Resort</h3>
+                        <p class="resort-address">112 Đường Võ Thị Liễu, Quận 12, TP. Hồ Chí Minh</p>
+                        <span class="resort-descrip">
+                            Nằm ở TP. Hồ Chí Minh, cách Trung tâm thương mại Vincom Thủ Đức
+                            9.1
+                            km, Hidden Mansions Saigon Resort cung cấp chỗ nghỉ có hồ bơi ngoài trời, chỗ đậu xe riêng
+                            miễn
+                            phí, khu vườn và sân hiên. Chỗ nghỉ này có quầy bar, cũng như nhà hàng phục vụ ẩm thực Việt.
+                            Chỗ nghỉ cung cấp lễ tân 24/24, dịch vụ đưa đón sân bay, dịch vụ phòng và Wi-Fi miễn phí ở
+                            toàn
+                            bộ chỗ nghỉ.
+                            Hidden Mansions Saigon Resort cách Bảo tàng lịch sử Việt Nam 12 km và Trung tâm mua sắm AEON
+                            MALL Bình Dương Canary 13 km.
+                        </span>
+                        <div class="resort-price">VND 789.750</div>
+                        <div class="resort-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="resort-book-btn">
+                        <a href="../src/componemts/accommodation/resort_source/HIDDEN_MANSIONS-HCM/thanhtoan/index.html">
+                            <button class="resort-btn">
+                                Đặt
+                                ngay
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="resort-card vungtau" style="display: none;">
+                    <a href="./SEASIDE-VT/index.html" class="resort-link">
+                        <div class="resort-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/512857833.jpg?k=fce336a0872aa01a8092fb0cfebdf4e64e48bc38c127c4fc9e72b9b2dd9b7ef3&o="
+                                 alt="Căn hộ" class="resort-image__img">
+                            <div class="resort-rating">8.2</div>
+                        </div>
+
+                    </a>
+                    <div class="resort-info">
+                        <h3 class="resort-name">Seaside Resort Vung Tau</h3>
+                        <p class="resort-address">28 Tran Phu, Vũng Tàu</p>
+                        <span class="resort-descrip">
+                            Seaside Resort Vung Tau cách Bãi Sau (Bãi biển Công cộng) 20 phút
+                            lái
+                            xe. Cảng Tàu Tốc hành cách nơi đây 3 km và khách đi xe 10 phút là đến được Bạch Dinh (White
+                            Palace).
+
+                            Trung tâm dịch vụ doanh nhân tại đây cung cấp dịch vụ fax và phô-tô miễn phí. Khách sạn cũng
+                            có
+                            xe đạp cho thuê, phòng họp và chỗ giữ hành lý. Báo hàng ngày cũng có sẵn tại quầy lễ tân.
+
+                            Để phục vụ ăn uống, nơi này có nhà hàng trong khuôn viên cung cấp món ăn Phương Tây và Việt
+                            Nam,
+                            dịch vụ phòng đáp ứng nhu cầu ăn uống trong phòng cũng như tiện nghi tiệc nướng ngoài trời.
+                        </span>
+                        <div class="resort-price">VND 1.061.400</div>
+                        <div class="resort-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="resort-book-btn">
+                        <a href="../src/componemts/accommodation/resort_source/SEASIDE-VT/thanhtoan/index.html"><button class="resort-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="resort-card vungtau" style="display: none;">
+                    <a href="./SV_BOUTIQUE-VT/index.html" class="resort-link">
+                        <div class="resort-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/477544354.jpg?k=70542e5acf0e98e107bc9678a76deb9144ec24fdb97c33e89ec971de5f4036cd&o=&hp=1"
+                                 alt="Căn hộ" class="resort-image__img">
+                            <div class="resort-rating">9.4</div>
+                        </div>
+
+                    </a>
+                    <div class="resort-info">
+                        <h3 class="resort-name">SV Boutique Resort</h3>
+                        <p class="resort-address">66/15 Hạ Long, Phường 2, Thành Phố Vũng Tàu, Vũng Tàu</p>
+                        <span class="resort-descrip">
+                            Nằm trong một tòa nhà thuộc địa kiểu Pháp ở sườn đồi và có hồ bơi
+                            vô
+                            cực đầy mời gọi với khung cảnh biển làm nền, SV Boutique Resort cung cấp chỗ nghỉ được bài
+                            trí
+                            trang nhã tại thành phố cảng Vũng Tàu.
+                            Khách lưu trú tại chỗ nghỉ có khu vườn bao quanh này có thể thưởng thức đồ uống tự chọn tại
+                            quầy
+                            bar trong khuôn viên. Chỗ nghỉ này cung cấp WiFi miễn phí trong toàn bộ khuôn viên.
+                            Những khách lái xe tới chỗ nghỉ có thể sử dụng chỗ đỗ xe miễn phí trong khuôn viên. SV
+                            Boutique
+                            Resort nằm cách Tượng Chúa Kitô Vua 900 m và Mũi Nghinh Phong 1,3 km.
+                            Bến phà gần nhất nằm trong bán kính 10 phút đi bộ từ SV Boutique Resort trong khi sân bay
+                            gần
+                            nhất là sân bay quốc tế Tân Sơn Nhất, cách đó 72 km.
+                        </span>
+                        <div class="resort-price">VND 1.168.268</div>
+                        <div class="resort-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="resort-book-btn">
+                        <a href="../src/componemts/accommodation/resort_source/SV_BOUTIQUE-VT/thanhtoan/index.html"><button class="resort-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="resort-card hanoi" style="display: none;">
+                    <a href="./PARADISE_SOCSON-HN/index.html" class="resort-link">
+                        <div class="resort-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/568656579.jpg?k=a6eb57a4b11f22b464157063f78a51eb423d6da195da94563cb48cc2f0237813&o="
+                                 alt="Căn hộ" class="resort-image__img">
+                            <div class="resort-rating">7.7</div>
+                        </div>
+
+                    </a>
+                    <div class="resort-info">
+                        <h3 class="resort-name">Paradise Soc Son Resort</h3>
+                        <p class="resort-address">10 Suối Mới, Nam Sơn, Sóc Sơn, Hà Nội, Vietnam, Hà Nội</p>
+                        <span class="resort-descrip">
+                            Paradise Soc Son Resort có xe đạp miễn phí, hồ bơi ngoài trời,
+                            trung
+                            tâm thể dục và khu vườn ở Hà Nội. Chỗ nghỉ này có các tiện nghi như phòng chờ chung, nhà
+                            hàng,
+                            cũng như quầy bar.
+                            Chỗ nghỉ cung cấp lễ tân 24/24, dịch vụ đưa đón sân bay, câu lạc bộ trẻ em và Wi-Fi miễn phí
+                            ở
+                            toàn bộ chỗ nghỉ.
+                            Paradise Soc Son Resort có sân chơi trẻ em. Khách có thể chơi bi-a, trò phi tiêu và sân chơi
+                            golf mini tại resort. Ngoài ra, leo núi và đi xe đạp là hoạt động được ưa chuộng trong khu
+                            vực.
+                            Paradise Soc Son Resort cách Phủ Thành Chương 3 km và Bảo tàng dân tộc học Việt Nam 34 km.
+                        </span>
+                        <div class="resort-price">VND 1.625.000</div>
+                        <div class="resort-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="resort-book-btn">
+                        <a href="../src/componemts/accommodation/resort_source/PARADISE_SOCSON-HN/thanhtoan/index.html">
+                            <button class="resort-btn">
+                                Đặt
+                                ngay
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="resort-card cantho" style="display: none;">
+                    <a href="./CANTHO_ECO-CT/index.html" class="resort-link">
+                        <div class="resort-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/336309078.jpg?k=fa2611bc82d8cc9473a7fd80010e9f1b014b4b6a45fbe3e461b06ae0a36e01e2&o="
+                                 alt="Căn hộ" class="resort-image__img">
+                            <div class="resort-rating">8.4</div>
+                        </div>
+
+                    </a>
+                    <div class="resort-info">
+                        <h3 class="resort-name">Cantho Eco Resort</h3>
+                        <p class="resort-address">Km7, Quốc Lộ 61C, Nhơn Nghĩa, Phong Điền, Cần Thơ, Cần Thơ</p>
+                        <span class="resort-descrip">
+                            Nằm ở Cần Thơ, cách Trung tâm thương mại Vincom Xuân Khánh 14 km,
+                            Cantho Eco Resort cung cấp chỗ nghỉ có hồ bơi ngoài trời, chỗ đậu xe riêng miễn phí, trung
+                            tâm
+                            thể dục và khu vườn.
+                            Ngoài nhà hàng, resort 4 sao này còn có các phòng với điều hòa được trang bị Wi-Fi miễn phí,
+                            trong đó mỗi phòng đều có phòng tắm riêng.Chỗ nghỉ này cung cấp câu lạc bộ trẻ em, dịch vụ
+                            phòng
+                            và phòng giữ hành lý cho khách.
+                            Resort cách Bến Ninh Kiều 16 km và Vincom Plaza Hùng Vương 16 km.
+                        </span>
+                        <div class="resort-price">VND 1.155.000</div>
+                        <div class="resort-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="resort-book-btn">
+                        <a href="../src/componemts/accommodation/resort_source/CANTHO_ECO-CT/thanhtoan/index.html"><button class="resort-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="resort-card vungtau" style="display: none;">
+                    <a href="./MERCURE-VT/index.html" class="resort-link">
+                        <div class="resort-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/269394411.jpg?k=623c1e49b384dccd2e70b3fbe26ad087b51da0702ae00c0f0fc1d71130fb30b9&o=&hp=1"
+                                 alt="Căn hộ" class="resort-image__img">
+                            <div class="resort-rating">9.3</div>
+                        </div>
+
+                    </a>
+                    <div class="resort-info">
+                        <h3 class="resort-name">Mercure Vung Tau Resort</h3>
+                        <p class="resort-address">03-06 Ha Long Street, Ward 2, Vũng Tàu</p>
+                        <span class="resort-descrip">
+                            Khách có thể thưởng thức bữa sáng thực đơn buffet, kiểu Mỹ hoặc
+                            kiểu Á
+                            tại chỗ nghỉ.
+
+                            Đi xe đạp là hoạt động được ưa chuộng trong khu vực. Ngoài ra, chỗ nghỉ có dịch vụ thuê xe
+                            đạp.
+
+                            Thành thạo tiếng Anh, tiếng Hindi, tiếng Việt và tiếng Hoa, đội ngũ nhân viên tại lễ tân
+                            luôn
+                            sẵn lòng đưa ra thông tin hữu ích về khu vực xung quanh.
+
+                            Các điểm tham quan nổi tiếng gần Mercure Vung Tau Resort bao gồm Bãi Dứa, Bãi Sau và Mũi
+                            Nghinh
+                            Phong.
+                        </span>
+                        <div class="resort-price">VND 2.058.509</div>
+                        <div class="resort-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="resort-book-btn">
+                        <a href="../src/componemts/accommodation/resort_source/MERCURE-VT/thanhtoan/index.html"><button class="resort-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="resort-card nhatrang" style="display: none;">
+                    <a href="./VINPEARL-NT/index.html" class="resort-link">
+                        <div class="resort-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max500/412883158.jpg?k=a220ece8f04054da35466bd13ee87342354cc18122b73eb0fbdcfef850115325&o="
+                                 alt="Căn hộ" class="resort-image__img">
+                            <div class="resort-rating">9.2</div>
+                        </div>
+
+                    </a>
+                    <div class="resort-info">
+                        <h3 class="resort-name">Vinpearl Resort Nha Trang</h3>
+                        <p class="resort-address">19 Hoa Hong Street, Ward 4, Ho Tuyen Lam, Đà Lạt</p>
+                        <span class="resort-descrip">
+                            Tự hào là một trong những viên gạch đầu tiên đặt nền móng cho du
+                            lịch
+                            Việt Nam, Vinpearl Resort Nha Trang chào đón du khách bằng vẻ đẹp phương Đông thuần khiết và
+                            không tuổi, với mái ngói đỏ tươi ôm trọn khuôn viên xanh bắt mắt, kiến trúc Đông Dương sang
+                            trọng và bãi biển cát trắng tự nhiên riêng.
+                            Giữa những trải nghiệm năng động không giới hạn tại khu phức hợp giải trí và nghỉ dưỡng hàng
+                            đầu
+                            của khu vực tại Đảo Hòn Tre, Vinpearl Resort Nha Trang là một âm hưởng nhẹ nhàng, là nơi
+                            nghỉ
+                            dưỡng thanh bình cho những ai thích thư giãn và chăm sóc sức khỏe, một nơi để phục hồi năng
+                            lượng cho những tâm hồn sôi động, thích giải trí và khám phá.
+                        </span>
+                        <div class="resort-price">VND 3.590.000</div>
+                        <div class="resort-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="resort-book-btn">
+                        <a href="../src/componemts/accommodation/resort_source/VINPEARL-NT/thanhtoan/index.html"><button class="resort-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Villas -->
+            <div class="villas-grid">
+                <!-- 1 -->
+                <div class="villas-card hochiminh" style="display: none;">
+                    <a href="./VILLA_LAROSE-HCM/index.html" class="villas-link">
+                        <div class="villas-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/662644222.jpg?k=90d150769ad113627dfb01adf5e2c05822bdbf933cba6207af8f8ed4449b2ec7&o=&hp=1"
+                                 alt="Khách sạn" class="villas-image__img">
+                            <div class="villas-rating">10</div>
+                        </div>
+
+                    </a>
+                    <div class="villas-info">
+                        <h3 class="villas-name">Villa La Rose Blanc Thảo Điền</h3>
+                        <p class="villas-address">15 Đ. Số 11, 700000 TP. Hồ Chí Minh</p>
+                        <span class="villas-descrip">
+                            Với khu vườn, phòng chờ chung, sân hiên và quầy bar, Villa La Rose
+                            Blanc Thảo Điền tọa lạc ở Thảo Điền, TP. Hồ Chí Minh, chỉ cách Bảo tàng lịch sử Việt Nam
+                            6.4
+                            km. Chỗ nghỉ này có ban công, bàn bi-a, chỗ đậu xe riêng miễn phí và Wi-Fi miễn phí.
+                        </span>
+                        <div class="villas-price">VND 24.300.000</div>
+                        <div class="villas-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="villas-book-btn">
+                        <a href="../src/componemts/accommodation/villas_source/VILLA_LAROSE-HCM/thanhtoan/index.html">
+                            <button class="villas-btn">
+                                Đặt
+                                ngay
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="villas-card hochiminh" style="display: none;">
+                    <a href="./SERENITY_SGSKY-HCM/index.html" class="villas-link">
+                        <div class="villas-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/648778991.jpg?k=c4d8de2a5a5a02d4eb3688e084661b9d02ad335f6fb57da800e1aae412f37b26&o=&hp=1"
+                                 alt="Khách sạn" class="villas-image__img">
+                            <div class="villas-rating">9.1</div>
+                        </div>
+
+                    </a>
+                    <div class="villas-info">
+                        <h3 class="villas-name">Serenity Saigon Sky Villas</h3>
+                        <p class="villas-address">259 Điện Biên Phủ, Quận 3, TP. Hồ Chí Minh</p>
+                        <span class="villas-descrip">
+                            Nhìn ra thành phố, Serenity Saigon Sky Villas - Free One Way
+                            Airport
+                            Shuttle ở TP. Hồ Chí Minh cung cấp chỗ nghỉ có hồ bơi ngoài trời, khu vườn, phòng chờ
+                            chung,
+                            sân hiên và nhà hàng.
+                            Chỗ nghỉ có Wi-Fi miễn phí và chỗ đậu xe riêng có sẵn trong khuôn viên.
+                            Các điểm tham quan nổi tiếng gần chỗ nghỉ bao gồm Bảo tàng chứng tích chiến tranh, Chợ Tân
+                            Định
+                            và Dinh Thống Nhất. Sân bay Quốc tế Tân Sơn Nhất cách 6 km.
+                        </span>
+                        <div class="villas-price">VND 9.080.100</div>
+                        <div class="villas-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="villas-book-btn">
+                        <a href="../src/componemts/accommodation/villas_source/SERENITY_SGSKY-HCM/thanhtoan/index.html">
+                            <button class="villas-btn">
+                                Đặt
+                                ngay
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="villas-card hanoi" style="display: none;">
+                    <a href="./ROYAL_WESTLAKE-HN/index.html" class="villas-link">
+                        <div class="villas-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/633545661.jpg?k=0de64c2705243c18f354fe3cc95beeb055bdad1417873a2f207c6c5fa7a6e839&o="
+                                 alt="Khách sạn" class="villas-image__img">
+                            <div class="villas-rating">9.5</div>
+                        </div>
+
+                    </a>
+                    <div class="villas-info">
+                        <h3 class="villas-name">Royal Westlake Villa</h3>
+                        <p class="villas-address">45 Đường Tô Ngọc Vân, Quận Tây Hồ, 10000 Hà Nội</p>
+                        <span class="villas-descrip">
+                            Tọa lạc ở Hà Nội, cách Hồ Tây 3.3 km, Royal Westlake Villa - Full
+                            amenities - 400sqm cung cấp chỗ nghỉ có khu vườn,
+                            Wi-Fi miễn phí, bếp chung, cùng dịch vụ đưa đón miễn phí. Nằm cách Đền Quán Thánh 4.5 km,
+                            chỗ
+                            nghỉ cung cấp phòng chờ chung và chỗ đậu xe riêng miễn phí.
+                            Chỗ nghỉ cách Lăng Chủ tịch Hồ Chí Minh 4.6 km và Ô Quan Chưởng 4.9 km.
+                        </span>
+                        <div class="villas-price">VND 5.840.000</div>
+                        <div class="villas-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="villas-book-btn">
+                        <a href="../src/componemts/accommodation/villas_source/ROYAL_WESTLAKE-HN/thanhtoan/index.html">
+                            <button class="villas-btn">
+                                Đặt
+                                ngay
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="villas-card hanoi" style="display: none;">
+                    <a href="./CHARMING_LUX-HN/index.html" class="villas-link">
+                        <div class="villas-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/486715303.jpg?k=56f42c15256d76f9861bd50a959ba6e119f3583326114eac3a0071b3c15d27bc&o="
+                                 alt="Khách sạn" class="villas-image__img">
+                            <div class="villas-rating">9.3</div>
+                        </div>
+
+                    </a>
+                    <div class="villas-info">
+                        <h3 class="villas-name">Charming luxury villa</h3>
+                        <p class="villas-address">26D4 Ciputra, Tây Hồ, Quận Tây Hồ, Hà Nội</p>
+                        <span class="villas-descrip">
+                            Biệt thự có nhiều tiện nghi chăm sóc sức khỏe bao gồm phòng xông
+                            hơi
+                            khô và bể sục. Khách có thể thoải mái sử dụng hồ bơi trong nhà tại Charming luxury villa
+                            with
+                            outdoor spa and garden 4 bedrooms.
+
+                            Chỗ nghỉ cách Bảo tàng dân tộc học Việt Nam 5.1 km và Trung tâm thương mại Vincom Nguyễn Chí
+                            Thanh 7.1 km.
+                        </span>
+                        <div class="villas-price">VND 9.080.100</div>
+                        <div class="villas-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="villas-book-btn">
+                        <a href="../src/componemts/accommodation/villas_source/CHARMING_LUX-HN/thanhtoan/index.html">
+                            <button class="villas-btn">
+                                Đặt
+                                ngay
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="villas-card vungtau" style="display: none;">
+                    <a href="./VILLA_VT-VT/index.html" class="villas-link">
+                        <div class="villas-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/555548697.jpg?k=bbb137b1ee8f506c7b0fe88a7bf06203bbfc2e4c48084b88d541bd56dbc78fd1&o=&hp=1"
+                                 alt="Khách sạn" class="villas-image__img">
+                            <div class="villas-rating">8.9</div>
+                        </div>
+
+                    </a>
+                    <div class="villas-info">
+                        <h3 class="villas-name">Villa Aria Vũng Tàu</h3>
+                        <p class="villas-address">79 Đường D5, Vũng Tàu</p>
+                        <span class="villas-descrip">
+                            Chỗ nghỉ có cả dịch vụ cho thuê xe đạp và dịch vụ cho thuê ô tô,
+                            đồng
+                            thời du khách có thể leo núi và đi xe đạp gần đó.
+
+                            Các điểm tham quan nổi tiếng gần Villa Vũng Tàu - Biệt Thự Vũng Tàu Gần Biển Gần Trung Tâm
+                            bao
+                            gồm Bãi Trước, Bãi Dâu và Bạch Dinh.
+                            Sân bay Quốc tế Tân Sơn Nhất cách 103 km, đồng thời chỗ nghỉ có cung cấp dịch vụ đưa đón sân
+                            bay
+                            mất phí.
+                        </span>
+                        <div class="villas-price">VND 5.392.230</div>
+                        <div class="villas-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="villas-book-btn">
+                        <a href="../src/componemts/accommodation/villas_source/VILLA_VT-VT/thanhtoan/index.html"><button class="villas-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="villas-card dalat" style="display: none;">
+                    <a href="./FREELANCE-ĐL/index.html" class="villas-link">
+                        <div class="villas-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/603152720.jpg?k=7b987e78a583418d997cef202609c51e90c8c832d6097ba555da7efb29504756&o="
+                                 alt="Khách sạn" class="villas-image__img">
+                            <div class="villas-rating">9.2</div>
+                        </div>
+
+                    </a>
+                    <div class="villas-info">
+                        <h3 class="villas-name">FREELANCE VILLA</h3>
+                        <p class="villas-address">43 Đường Vạn Hạnh, Đà Lạt</p>
+                        <span class="villas-descrip">
+                            Nhìn ra núi, FREELANCE VILLA cung cấp chỗ nghỉ có ban công và ấm
+                            đun
+                            nước, cách Sân golf Dalat Palace Golf Club khoảng 1.8 km.
+                            Biệt thự này có khu vườn, tiện nghi BBQ, Wi-Fi miễn phí và chỗ đậu xe riêng miễn phí.
+                        </span>
+                        <div class="villas-price">VND 2.452.800</div>
+                        <div class="villas-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="villas-book-btn">
+                        <a href="../src/componemts/accommodation/villas_source/FREELANCE-ĐL/thanhtoan/index.html"><button class="villas-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="villas-card dalat" style="display: none;">
+                    <a href="./Q&P_SMART-ĐL/index.html" class="villas-link">
+                        <div class="villas-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/235835264.jpg?k=0ef9d893e33f7982a7be6a665c435c07fe16b94d68a499b8868fb7235316dbbf&o="
+                                 alt="Khách sạn" class="villas-image__img">
+                            <div class="villas-rating">8.1</div>
+                        </div>
+
+                    </a>
+                    <div class="villas-info">
+                        <h3 class="villas-name">Q&P Smart Ville</h3>
+                        <p class="villas-address">Lô C7 Hùng Vương (C-3), Đà Lạt</p>
+                        <span class="villas-descrip">
+                            Q&P Smart Ville nhìn ra thành phố, có Wi-Fi miễn phí và chỗ đậu xe
+                            riêng miễn phí, tọa lạc ở Đà Lạt, cách Vườn hoa Đà Lạt 4.1 km.
+
+                            Tất cả các căn có thiết kế gồm khu vực ghế ngồi, TV màn hình phẳng có truyền hình cáp, cùng
+                            phòng tắm riêng có trang bị đồ vệ sinh cá nhân miễn phí, vòi xịt/chậu rửa vệ sinh và vòi
+                            sen.
+                            Một số căn có ban công và/hoặc sân trong nhìn ra núi hoặc khu vườn.
+
+                        </span>
+                        <div class="villas-price">VND 1.141.125</div>
+                        <div class="villas-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="villas-book-btn">
+                        <a href="../src/componemts/accommodation/villas_source/Q&P_SMART-ĐL/thanhtoan/index.html"><button class="villas-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <div class="villas-card nhatrang" style="display: none;">
+                    <a href="./SEASIDE_ANVIEN-NT/index.html" class="villas-link">
+                        <div class="villas-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/238190513.jpg?k=e4d5291053c7b83646dddfdd85bad38be8c10dade339b589c2c8fba7cb6d7623&o=&hp=1"
+                                 alt="Khách sạn" class="villas-image__img">
+                            <div class="villas-rating">8.2</div>
+                        </div>
+
+                    </a>
+                    <div class="villas-info">
+                        <h3 class="villas-name">Seaside Villas An Vien Nha Trang</h3>
+                        <p class="villas-address">
+                            B14, 1B Street, An Vien Seaside Complex, Vinh Truong town, Nha Trang
+                        </p>
+                        <span class="villas-descrip">
+                            Seaside Villas An Vien Nha Trang có phục vụ bữa sáng thực đơn à la
+                            carte và kiểu Á.
+
+                            Chỗ nghỉ có bể sục.
+
+                            Khách có thể tìm thấy khu vực bãi biển riêng và nhiều tiện nghi thể thao dưới nước tại
+                            Seaside
+                            Villas An Vien Nha Trang, cùng khu vườn.
+
+                            Biệt thự cách Bảo tàng Alexandre Yersin 13 phút đi bộ. Sân bay quốc tế Cam Ranh cách 35 km,
+                            đồng
+                            thời chỗ nghỉ có cung cấp dịch vụ đưa đón sân bay mất phí.
+                        </span>
+                        <div class="villas-price">VND 1.260.000</div>
+                        <div class="villas-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="villas-book-btn">
+                        <a href="../src/componemts/accommodation/villas_source/SEASIDE_ANVIEN-NT/thanhtoan/index.html">
+                            <button class="villas-btn">
+                                Đặt
+                                ngay
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- apartment -->
+
+            <div class="apartment-grid">
+                <!-- 1 -->
+                <div class="apartment-card hochiminh" style="display: none;">
+                    <a href="./SARENE_RIVERSIDE-HCM/index.html" class="apartment-link">
+                        <div class="apartment-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/657474453.jpg?k=60191ca4bd2685361507a118dfb68a6f356a68fd18ca3a06e96835a3a831752c&o="
+                                 alt="Căn hộ" class="apartment-image__img">
+                            <div class="apartment-rating">8.0</div>
+                        </div>
+
+                    </a>
+                    <div class="apartment-info">
+                        <h3 class="apartment-name">Sarene Lumiere Riverside Thao Dien</h3>
+                        <p class="apartment-address">
+                            Lumiere Riverside Thao Dien, 259 Vo Nguyen Giap Street, 700000 TP.
+                            Hồ
+                            Chí Minh
+                        </p>
+                        <span class="apartment-descrip">
+                            Khách sạn căn hộ có sân hiên nơi khách có thể nhìn ra thành phố,
+                            khu
+                            vực ghế ngồi,
+                            TV màn hình phẳng truyền hình vệ tinh, bếp đầy đủ tiện nghi gồm tủ lạnh và lò vi sóng,
+                            cùng phòng tắm riêng được trang bị vòi xịt/chậu rửa vệ sinh và đồ vệ sinh cá nhân miễn phí.
+                            Mỗi
+                            căn đều được thiết kế có ban công nhìn ra núi.
+                        </span>
+                        <div class="apartment-price">VND 2.280.000</div>
+                        <div class="apartment-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="apartment-book-btn">
+                        <a href="../src/componemts/accommodation/apartment_source/SARENE_RIVERSIDE-HCM/thanhtoan/index.html">
+                            <button class="apartment-btn">
+                                Đặt
+                                ngay
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="apartment-card hanoi" style="display: none;">
+                    <a href="./LUMI-HN/index.html" class="apartment-link">
+                        <div class="apartment-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/576571064.jpg?k=439351afe14d48e7b8e06bf91ed82b4ac360648f1e443c67024f124ea34e93e8&o="
+                                 alt="Căn hộ" class="apartment-image__img">
+                            <div class="apartment-rating">8.8</div>
+                        </div>
+
+                    </a>
+                    <div class="apartment-info">
+                        <h3 class="apartment-name">LUMI Hotel & Apartment</h3>
+                        <p class="apartment-address">
+                            Số 09 ngõ 60 Linh Lang, tổ 18 Cống Vị Ba Đình, Quận Ba Đình, Hà
+                            Nội
+                        </p>
+                        <span class="apartment-descrip">
+                            LUMI Hotel & Apartment nhìn ra thành phố, có Wi-Fi miễn phí và
+                            chỗ
+                            đậu xe riêng miễn phí, nằm ở Hà Nội,
+                            cách Trung tâm thương mại Vincom Nguyễn Chí Thanh 1.9 km.
+                            LUMI Hotel & Apartment cách Bảo tàng dân tộc học Việt Nam 2 km. Sân bay Quốc tế Nội Bài cách
+                            22
+                            km, đồng thời chỗ nghỉ có cung cấp dịch vụ đưa đón sân bay mất phí.
+                        </span>
+                        <div class="apartment-price">VND 411.825</div>
+                        <div class="apartment-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="apartment-book-btn">
+                        <a href="../src/componemts/accommodation/apartment_source/LUMI-HN/thanhtoan/index.html"><button class="apartment-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="apartment-card dalat" style="display: none;">
+                    <a href="./KHANH_UYEN3-ĐL/index.html" class="apartment-link">
+                        <div class="apartment-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/646941773.jpg?k=04a6018db9064039c4b6a83cbc86e0d37f7396cf7dfd79e1d1aa3f098aa88ec3&o=&hp=1"
+                                 alt="Căn hộ" class="apartment-image__img">
+                            <div class="apartment-rating">9.7</div>
+                        </div>
+
+                    </a>
+                    <div class="apartment-info">
+                        <h3 class="apartment-name">Khanh Uyen 3 Hotel & Apart Central</h3>
+                        <p class="apartment-address">91 Phan Bội Châu, 67000 Đà Lạt</p>
+                        <span class="apartment-descrip">
+                            Căn hộ có TV màn hình phẳng và phòng tắm riêng với đồ vệ sinh cá
+                            nhân miễn phí, máy sấy tóc và vòi sen. Một số căn có sân hiên và/hoặc ban công nhìn ra thành
+                            phố
+                            hoặc khu vườn.
+
+                            Khanh Uyen 3 Hotel & Apart Central có cả dịch vụ cho thuê xe đạp và dịch vụ cho thuê ô tô.
+
+                            Chỗ nghỉ cách Công viên Yersin 1.8 km. Sân bay Liên Khương cách 32 km, đồng thời chỗ nghỉ có
+                            cung cấp dịch vụ đưa đón sân bay mất phí.
+                        </span>
+                        <div class="apartment-price">VND 516.000</div>
+                        <div class="apartment-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="apartment-book-btn">
+                        <a href="../src/componemts/accommodation/apartment_source/KHANH_UYEN3-ĐL/index.html"><button class="apartment-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="apartment-card cantho" style="display: none;">
+                    <a href="./RUSTIC-CT/index.html" class="apartment-link">
+                        <div class="apartment-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/659347019.jpg?k=9ecc73eacea1bebee7fb30537d7491da278e361d3308696823809b1f8f0ba29c&o=&hp=1"
+                                 alt="Căn hộ" class="apartment-image__img">
+                            <div class="apartment-rating">9.7</div>
+                        </div>
+
+                    </a>
+                    <div class="apartment-info">
+                        <h3 class="apartment-name">RUSTIC APARTMENT</h3>
+                        <p class="apartment-address">53/12 Đường Lê Lai Tầng 2, 900000 Cần Thơ</p>
+                        <span class="apartment-descrip">
+                            Với sân hiên và quầy lễ tân 24 giờ, RUSTIC APARTMENT- BeTong
+                            Residences nằm tại vị trí thuận tiện ở Cần Thơ, cách Trung tâm thương mại Vincom Xuân Khánh
+                            15
+                            phút đi bộ và Vincom Plaza Hùng Vương 1.9 km.
+                            Chỗ nghỉ điều hòa này cách Bến Ninh Kiều 14 phút đi bộ, khách có thể sử dụng WiFi miễn phí
+                            và
+                            chỗ đậu xe riêng có sẵn trong khuôn viên.
+                        </span>
+                        <div class="apartment-price">VND 2.070.000</div>
+                        <div class="apartment-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="apartment-book-btn">
+                        <a href="../src/componemts/accommodation/apartment_source/RUSTIC-CT/thanhtoan/index.html"><button class="apartment-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="apartment-card vungtau" style="display: none;">
+                    <a href="./AMORA-VT/index.html" class="apartment-link">
+                        <div class="apartment-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/253353776.jpg?k=98096afcdbd203899bebf696121927bda5e94ead8b90a49d620d46f214dceb74&o=&hp=1"
+                                 alt="Căn hộ" class="apartment-image__img">
+                            <div class="apartment-rating">8.8</div>
+                        </div>
+
+                    </a>
+                    <div class="apartment-info">
+                        <h3 class="apartment-name">Amora Hotel & Apartment</h3>
+                        <p class="apartment-address">89A Phan Chu Trinh, Phường 2, Vũng Tàu, Việt Nam, Vũng Tàu</p>
+                        <span class="apartment-descrip">
+                            Nằm ở TP. Hồ Chí Minh, cách Chợ Tân Định 8 phút đi bộ, La Vela
+                            Saigon apartment cung cấp chỗ nghỉ có hồ bơi ngoài trời,
+                            chỗ đậu xe riêng miễn phí, trung tâm thể dục và phòng chờ chung.
+                            Khách sạn có sân hiên và nhìn ra thành phố, ngoài ra du khách có thể thưởng thức bữa ăn tại
+                            nhà
+                            hàng hoặc đồ uống tại quầy bar.
+                        </span>
+                        <div class="apartment-price">VND 782.000</div>
+                        <div class="apartment-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="apartment-book-btn">
+                        <a href="../src/componemts/accommodation/apartment_source/AMORA-VT/thanhtoan/index.html"><button class="apartment-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="apartment-card hochiminh" style="display: none;">
+                    <a href="./METROPOLE-HCM/index.html" class="apartment-link">
+                        <div class="apartment-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/664794130.jpg?k=4bdaaa7c71ab10fc09d8ef0945967caf7f5b2b925b6e989b2e615e17ef3f10d4&o=&hp=1"
+                                 alt="Căn hộ" class="apartment-image__img">
+                            <div class="apartment-rating">9.5</div>
+                        </div>
+
+                    </a>
+                    <div class="apartment-info">
+                        <h3 class="apartment-name">Metropole Luxury - VIP Apartment</h3>
+                        <p class="apartment-address">QPG7+PCP Thủ Đức, Hồ Chí Minh, Việt Nam, TP. Hồ Chí Minh</p>
+                        <span class="apartment-descrip">
+                            Cách Bảo tàng lịch sử Việt Nam 2 km, Metropole Luxury - VIP
+                            Apartment có khu vườn, quầy bar, điều hòa, ban công và Wi-Fi miễn phí.
+
+                            Căn hộ có sân hiên nơi khách có thể nhìn ra thành phố, khu vực ghế ngồi, TV màn hình phẳng
+                            truyền hình cáp, bếp đầy đủ tiện nghi gồm tủ lạnh và lò nướng,
+                            cùng phòng tắm riêng được trang bị vòi xịt/chậu rửa vệ sinh và đồ vệ sinh cá nhân miễn phí.
+                            Mỗi
+                            căn đều được thiết kế có sân trong nhìn ra hồ.
+                        </span>
+                        <div class="apartment-price">VND 2.310.000</div>
+                        <div class="apartment-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="apartment-book-btn">
+                        <a href="../src/componemts/accommodation/apartment_source/METROPOLE-HCM/thanhtoan/index.html">
+                            <button class="apartment-btn">
+                                Đặt
+                                ngay
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="apartment-card nhatrang" style="display: none;">
+                    <a href="./S_LUX-NT/index.html" class="apartment-link">
+                        <div class="apartment-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max500/372125924.jpg?k=2559a1b7c7697d5b03df867c8f43b6c2771c22e83abb064e0a3aad73ff772dca&o="
+                                 alt="Căn hộ" class="apartment-image__img">
+                            <div class="apartment-rating">8.6</div>
+                        </div>
+
+                    </a>
+                    <div class="apartment-info">
+                        <h3 class="apartment-name">S Lux Apartment Scenia Bay Nha Trang</h3>
+                        <p class="apartment-address">26 Phạm Văn Đồng, Nha Trang</p>
+                        <span class="apartment-descrip">
+                            Nhìn ra thành phố, S Lux Apartment Scenia Bay Nha Trang ở Nha
+                            Trang
+                            cung cấp chỗ nghỉ có hồ bơi ngoài trời, khu vườn, khu vực bãi biển riêng, phòng chờ chung và
+                            sân
+                            hiên. Chỗ nghỉ có Wi-Fi miễn phí và chỗ đậu xe riêng có sẵn trong khuôn viên.
+
+                            Căn hộ có sân trong nơi khách có thể nhìn ra biển, khu vực ghế ngồi, TV màn hình phẳng
+                            truyền
+                            hình vệ tinh, bếp đầy đủ tiện nghi gồm tủ lạnh và lò vi sóng, cùng phòng tắm riêng được
+                            trang bị
+                            vòi xịt/chậu rửa vệ sinh và đồ vệ sinh cá nhân miễn phí.
+                            Để thuận tiện hơn cho khách, chỗ nghỉ có thể cung cấp khăn tắm và khăn trải giường với khoản
+                            phụ
+                            phí.
+                        </span>
+                        <div class="apartment-price">VND 1.116.000</div>
+                        <div class="apartment-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="apartment-book-btn">
+                        <a href="../src/componemts/accommodation/apartment_source/S_LUX-NT/thanhtoan/index.html"><button class="apartment-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="apartment-card nhatrang" style="display: none;">
+                    <a href="./CENTRAL-NT/index.html" class="apartment-link">
+                        <div class="apartment-image">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max300/455489969.jpg?k=a0d5235848795e6d717fe007264eeb3eef29e118a85e04755e6ea8e3858724f5&o="
+                                 alt="Căn hộ" class="apartment-image__img">
+                            <div class="apartment-rating">7.6</div>
+                        </div>
+
+                    </a>
+                    <div class="apartment-info">
+                        <h3 class="apartment-name">Central Nha Trang Apartment</h3>
+                        <p class="apartment-address">32 Trần Phú, Nha Trang</p>
+                        <span class="apartment-descrip">
+                            Tọa lạc ở Nha Trang, Central Nha Trang Apartment cung cấp chỗ
+                            nghỉ
+                            có hồ bơi ngoài trời mở quanh năm, Wi-Fi miễn phí, khu vực bãi biển riêng và nhà hàng.
+
+                            Căn hộ có dịch vụ cho thuê ô tô.
+
+                            Các điểm tham quan nổi tiếng gần Central Nha Trang Apartment bao gồm Bãi biển Nha Trang,
+                            Trung
+                            tâm thương mại Nha Trang Center và Nhà thờ Chánh tòa Kitô Vua (Nhà thờ Núi).
+                        </span>
+                        <div class="apartment-price">VND 2.000.000</div>
+                        <div class="apartment-per-night">Cho đêm nay</div>
+                    </div>
+                    <div class="apartment-book-btn">
+                        <a href="../src/componemts/accommodation/apartment_source/CENTRAL-NT/thanhtoan/index.html"><button class="apartment-btn">Đặt ngay</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    

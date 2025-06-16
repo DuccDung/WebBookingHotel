@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Category
+<div class="background__slider">
+    <div class="slider__content">
+        <div class="slider-text">
+            <h1 class="slider__title">@Model.Name</h1>
+            <p class="slider__subtitle">Tìm @Model.Name lý tưởng với bạn</p>
+        </div>
+        <div class="filters__slider">
+            <select class="search-bar__input" id="cityFilter">
+                <a href="../../famous_place/HCM/index.html">
+                <option value="hochiminh">TP Hồ Chí Minh</option>
+                </a>
+                <a href="../../famous_place/HaNoi/index.html">
+                <option value="hanoi">Hà Nội</option>
+                </a>
+                <a href="../../famous_place/CanTho/index.html">
+                <option value="cantho">Cần Thơ</option>
+                </a>
+                <a href="../../famous_place/DaLat/index.html">
+                <option value="dalat">Đà Lạt</option>
+                </a>
+                <a href="../../famous_place/VungTau/index.html">
+                <option value="vungtau">Vũng Tàu</option>
+                </a>
+                <a href="../../famous_place/NhaTrang/index.html">
+                <option value="nhatrang">Nha Trang</option>
+                </a>
+            </select>
+            <input type="date" class="filter-select">
+            <input type="date" class="filter-select">
+            <select class="filter-select" id="roomFilter">
+                <a href="#">
+                <option>1 người lớn - 0 trẻ em - 1 phòng</option>
+                </a>
+                <a href="#">
+                <option>1 người lớn - 0 trẻ em - 1 phòng</option>
+                </a>
+                <a href="#">
+                <option>4 người lớn - 2 trẻ em - 2 phòng</option>
+                </a>
+
+            </select>
+            <button class="slider__button">Tìm</button>
+        </div>
+        <div class="slider__checkbox">
+            <input type="checkbox" id="business" class="slider__checkbox-input">
+            <label for="business" class="slider__checkbox-label">Tôi đi công tác</label>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="breadcrumb">
+        <a href="../../../index.html">Trang chủ</a> <span>></span> <a href="../hotel_source/index.html">
+            Khách
+            sạn
+        </a> <span>></span> Tất cả @Model.Name
+    </div>
+    <div class="content__header">
+        <h1 class="content-title">Những  @Model.Name nổi bật</h1>
+        <p class="content-subtitle">Tìm ưu đãi  @Model.Name tuyệt vời cho đêm nay hoặc chuyển đi sắp tới</p>
+    </div>
+
+    <div class="hotel-grid">
+        @await Component.InvokeAsync("Hotels" , new {cateId = Model.CategoryId})
+    </div>
+</div>
