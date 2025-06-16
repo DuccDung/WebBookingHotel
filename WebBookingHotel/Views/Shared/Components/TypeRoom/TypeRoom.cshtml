@@ -1,22 +1,84 @@
 ﻿@model List<Room>
+
+<input type="hidden" name="hotelId" value="@Model.First().HotelId" />
+
+<input type="hidden" name="price" id="hiddenPrice" value="" />
+
 <div class="option-container">
     <div class="option-names" role="radiogroup" aria-label="Tùy chọn phòng">
-        @foreach (var item in Model)
+        @for (int i = 0; i < Model.Count; i++)
         {
-            <input type="radio" name="roomOption" id="option1" value="option1" checked />
-            <label for="option1">@item.RoomType</label>
+            var item = Model[i];
+            var optionId = $"option{i + 1}";
+
+            <input type="radio"
+                   name="roomOption"
+                   id="@optionId"
+                   value="@item.RoomId"
+                   data-option="@optionId"
+                   data-price="@item.Price"
+                   onchange="showPrice('@optionId', @item.Price)"
+                   @(i == 0 ? "checked" : "") />
+            <label for="@optionId">@item.RoomType</label>
         }
     </div>
 
     <div class="option-prices" aria-label="Giá tiền các tùy chọn">
-        @foreach (var item in Model)
+        @for (int i = 0; i < Model.Count; i++)
         {
-            <div class="price-item" data-option="option1" tabindex="0" aria-label="@item.RoomType">
-                <span class="price-number"></span>
-                <span class="price-unit">
-                    @($"{item.Price:N0} VNĐ")
-                </span>
+            var item = Model[i];
+            var optionId = $"option{i + 1}";
+            var display = i == 0 ? "block" : "none";
+
+            <div class="price-item"
+                 data-option="@optionId"
+                 id="price-@optionId"
+                 style="display:@display;"
+                 tabindex="0"
+                 aria-label="@item.RoomType">
+                <span class="price-number">@item.Price.ToString("N0", new System.Globalization.CultureInfo("vi-VN"))</span>
+                <span class="price-unit">VNĐ</span>
             </div>
         }
     </div>
 </div>
+
+
+
+<!-- Script xử lý -->
+<script>
+    function showPrice(optionId, price) {
+        // Ẩn tất cả giá
+        const allPrices = document.querySelectorAll(".price-item");
+        allPrices.forEach(p => p.style.display = "none");
+
+        // Hiện đúng giá
+        const target = document.getElementById("price-" + optionId);
+        if (target) {
+            target.style.display = "block";
+        }
+
+        // Format giá tiền và hiển thị
+        const formattedPrice = new Intl.NumberFormat('vi-VN').format(price);
+        const priceElement = document.getElementById("totalPriceValue");
+        if (priceElement) {
+            priceElement.textContent = formattedPrice;
+        }
+
+        // Gán vào input hidden
+        const hiddenInput = document.getElementById("hiddenPrice");
+        if (hiddenInput) {
+            hiddenInput.value = price;
+        }
+    }
+
+    // Khi trang load lần đầu
+    window.addEventListener("DOMContentLoaded", () => {
+        const checked = document.querySelector('input[name="roomOption"]:checked');
+        if (checked) {
+            const optionId = checked.dataset.option;
+            const price = parseFloat(checked.dataset.price);
+            showPrice(optionId, price);
+        }
+    });
+</script>

@@ -23,7 +23,7 @@
                  alt="CSJ Hotel Logo"
                  class="logo-image"
                  height="40" />
-        </div>
+        </div> 
         <nav class="header-nav">
             <div class="header-currency-flag">
                 <span>VND</span>
@@ -44,8 +44,7 @@
     </div>
 
     <p class="subtitle">Vui lòng chọn tùy chọn và phương thức thanh toán</p>
-    <form>
-
+    <form asp-action="HandleBooking" asp-controller="Home" method="post">
         <div id="booking-form" autocomplete="off" novalidate>
             @await Component.InvokeAsync("TypeRoom", new { hotelId = Model })
         </div>
@@ -72,6 +71,7 @@
                         </label>
                         <input id="lastname"
                                type="text"
+                               name="lastName"
                                placeholder="ví dụ: Nguyễn"
                                class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600" />
                     </div>
@@ -82,6 +82,7 @@
                         </label>
                         <input id="firstname"
                                type="text"
+                               name="firstName"
                                placeholder="ví dụ: Tuấn"
                                class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600" />
                     </div>
@@ -94,6 +95,7 @@
                     </label>
                     <input id="email"
                            type="email"
+                           name="email"
                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600" />
                     <p class="text-xs text-gray-500 mt-1">
                         Email xác nhận đặt phòng sẽ được gửi đến địa chỉ này
@@ -118,6 +120,7 @@
                             <span class="text-red-600">*</span>
                         </label>
                         <select id="phonecode"
+                                name="phoneCode"
                                 class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
                             <option>VN +84</option>
                         </select>
@@ -126,83 +129,38 @@
                         <label for="phone" class="block text-sm font-semibold mb-1 invisible">Số điện thoại</label>
                         <input id="phone"
                                type="text"
+                               name="phone"
                                class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600" />
                     </div>
                 </div>
                 <div class="total-container" id="totalPrice" aria-live="polite" aria-atomic="true">
-                    <span class="total-label">Tổng giá tiền:</span>
-                    <span class="total-price-number">2,300,000</span>
-                    <span class="total-price-unit">VND</span>
+                    
+                    <div class="total-container" id="totalPrice" aria-live="polite" aria-atomic="true">
+                        <span class="total-label"></span>
+                        <button type="submit" class="total-price-number" id="totalPriceValue total-label">Đặt Phòng</button>
+                        <span class="total-price-unit"></span>
+                    </div>
                 </div>
             </div>
         </div>
     </form>
 
     <script>
-        (function() {
-          // Prices in VND
-          const prices = {
-            option1: 530000,
-            option2: 453700,
-            option3: 660000
-          };
+        (function () {
+            document.getElementById('totalPrice').addEventListener('click', function (e) {
+                // Ngăn form gửi nếu thông tin không hợp lệ
+                const lastname = document.getElementById('lastname').value.trim();
+                const firstname = document.getElementById('firstname').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
 
-          const roomOptions = document.getElementsByName('roomOption');
-          const paymentMethods = document.getElementsByName('paymentMethod'); // Currently not affecting price
-          const totalPriceNumber = document.querySelector('.total-price-number');
-          const priceItems = document.querySelectorAll('.price-item');
-
-          function formatVND(number) {
-            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-          }
-
-          function updatePriceHighlight(selectedOption) {
-            priceItems.forEach(item => {
-              if (item.dataset.option === selectedOption) {
-                item.classList.add('active');
-              } else {
-                item.classList.remove('active');
-              }
+                if (!lastname || !firstname || !email || !phone) {
+                    e.preventDefault(); // Ngăn submit
+                    alert('Vui lòng nhập đầy đủ thông tin trước khi đặt phòng!');
+                }
             });
-          }
-
-          function updateTotal() {
-            let selectedOption = Array.from(roomOptions).find(opt => opt.checked)?.value;
-            if (!selectedOption) selectedOption = 'option1';
-
-            let basePrice = prices[selectedOption] || 0;
-            totalPriceNumber.textContent = formatVND(basePrice);
-            updatePriceHighlight(selectedOption);
-          }
-
-          Array.from(roomOptions).forEach(option => {
-            option.addEventListener('change', updateTotal);
-          });
-
-          Array.from(paymentMethods).forEach(pm => {
-            pm.addEventListener('change', updateTotal);
-          });
-
-          updateTotal();
-
-          // Thêm sự kiện click vào tổng giá tiền
-          document.getElementById('totalPrice').addEventListener('click', function() {
-            // Lấy giá trị từ các trường nhập liệu
-            const lastname = document.getElementById('lastname').value.trim();
-            const firstname = document.getElementById('firstname').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-
-            // Kiểm tra nếu bất kỳ trường nào bị bỏ trống
-            if (!lastname || !firstname || !email || !phone) {
-              alert('Vui lòng nhập đầy đủ thông tin trước khi đặt phòng!');
-              return;
-            }
-
-            // Nếu tất cả thông tin đã được nhập, hiển thị thông báo thành công
-            alert('Đặt phòng thành công!');
-          });
         })();
     </script>
+
 </body>
 </html>
